@@ -23,7 +23,7 @@
         );
 
         // 각 변수들의 자료형을 찍어봄.
-        // 숫자(Number), 문자 (string), 참-거짓 (boolean), undefine, null(객체) 
+        // 숫자(Number), 문자 (string), 참-거짓 (boolean), undefine, null(객체):값이 없다고 정해놓은 상태
 
         console.log(
             typeof (a),
@@ -44,6 +44,7 @@
         let TF = undefined;
 
         //참스러운 값과 거짓스러운 값...
+        // this는 window를 가르킨다.
 
         console.log(
             Boolean(TA),
@@ -52,8 +53,29 @@
             Boolean(TD),
             Boolean(TE),
             Boolean(TF),
-        )
+        );
 
+
+        const 객체 = {
+            name: '이창훈',
+            age: 41,
+            work: function () {
+                console.log('술마시기')
+            }
+        }
+
+        console.log(객체.name, 객체['name']);
+
+        const 배열 = [1, 2, 3, 4, 5];
+
+        console.log(배열[0])
+
+
+        const 함수 = function () {
+            return '나는 함수';
+        }
+
+        console.log(함수())
 
     </script>
 </body>

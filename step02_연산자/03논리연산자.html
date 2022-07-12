@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자03 - 논리연산자</title>
+</head>
+
+<body>
+    <script>
+        let 참 = true;
+        let 거짓 = false;
+        const a = '이창훈';
+
+        console.log(참, 거짓);
+        console.log(!참, !거짓); // ! NOT 부정연산자.
+
+        console.log(참 && 거짓, 참 && 참, 거짓 && 거짓) // AND 그리고 연산자. 하나라도 거짓이면 거. 둘 다 참일 때만 참.
+        console.log(거짓 || 참, 거짓 || 거짓) // OR 또는 연산자. 하나라도 참이면 참.
+
+        a ? console.log(a + '진실한 너') : console.log('못된 놈')
+
+        if (!a) {
+            console.log(a + '진실한 너')
+        } else {
+            console.log('못된 놈')
+        }
+
+        a && console.log(a + '진실한 너');
+
+        if (a) {
+            console.log(a + '진실한 너')
+        }
+
+        !a || console.log('못된 놈');  //a 일때 안 뜨는 게 정상. 참이기때문에. 하지만 !a 하면 거짓임으로 나타남.
+
+
+
+
+    </script>
+
+</body>
+
+</html>
