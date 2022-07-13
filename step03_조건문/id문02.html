@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문02 - if문02</title>
+</head>
+
+<body>
+    <div id="" class="txt"></div>
+    <input id="input">
+    <button id="btn">click</button>
+    <script>
+
+        btn.addEventListener('click', function () {
+            console.log('되나?', input.value)
+            let age = input.value;
+
+            if (age < 10) {
+                txt.innerText = `안돼 돌아가`
+            } else if (age >= 10 && age <= 20) {
+                txt.innerText = `어서와`
+            } else if (age > 20 && age < 40) {
+                txt.innerText = `와이라노`
+            } else {
+                txt.innerText = `안돼용 안돼용`
+            }
+        })
+
+    </script>
+</body>
+
+</html>
