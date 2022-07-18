@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 - for문</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>sum01</li>
+        <li>sum02</li>
+        <li>sum03</li>
+        <li>sum04</li>
+    </ul>
+    <script>
+        // length=길이
+        // [Prototype = 숨겨진 프로퍼티
+        // i는 임의로 숫자를 넣기위해 지정한 변수임.
+        // ForEach 메서드에서 el은 요소를 담는 변수, i는 인덱스
+
+        // for 반복문 순회
+
+        const 자료 = ['하나', '두리', '서희', '넷이'];
+
+        console.log(자료);
+
+        for (i = 0; i < 자료.length; i++) {
+            console.log(자료[i]);
+        }
+
+        for (i = 1; i < 10; i++) {
+            console.log(i)
+        }
+
+
+        /* 배열?
+        // const UL = document.querySelector('#list');
+        // console.log(UL);
+
+        // const LI = document.querySelectorAll('#list li');
+        // console.log(LI);
+
+        // for (let t = 0; t < LI.length; t++) {
+        //     LI[t].style.color = 'red';
+        // }
+
+        // LI.forEach(el => el.style.color = 'blue');
+
+        // UL.addEventListener('click', function () {
+        //     console.log(this)
+        // });
+
+        /*
+        $('#list li').on('click', function (){
+            $('#list li').css({ color: 'blue' });
+            $(this).css({ color: 'yellow' });
+        })
+        */
+
+        // LI.forEach(function (el) {
+        //     el.addEventListener('click', function () {
+        //         LI.forEach(el => el.style.color = 'blue');
+        //         el.style.color = 'yellow'
+        //     })
+        // });   */
+
+
+
+
+    </script>
+</body>
+
+</html>
