@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #trueFales {
+            width: 327px;
+            height: 218px;
+            background: #f00;
+            border-radius: 50%;
+            padding: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="trueFales"></div>
+
+    <script>
+        //랜덤한 숫자 만들기...
+        const 원주율 = Math.PI;
+
+        const trueFales = document.querySelector('#trueFales');
+        const Width = trueFales.clientWidth;
+        const Height = trueFales.clientHeight;
+
+        console.log(Width, Height);
+
+
+        // Math.floor 소수점내림
+        // Math.ceil 소수점 올림
+        // Math.round 소수점 반올림
+
+        const M = Math.floor((Width / 2) * (Height / 2) * 원주율);
+
+        trueFales.innerHTML = `<span>${M}</span>`;
+
+        // Math.random 
+
+        const randomNumber = Math.random();
+        console.log(randomNumber);
+
+        const NUM = Math.floor(randomNumber * 45 + 1);
+        console.log(NUM);
+
+        const lotto = [];
+
+        for (i = 0; i < 6; i++) {
+            let lottoNum = Math.floor(Math.random() * 45 + 1);
+            lotto.push(lottoNum);
+        }
+
+        console.log(lotto);
+
+    </script>
+</body>
+
+</html>

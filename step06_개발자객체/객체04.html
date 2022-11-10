@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 04 - 객체생성자함수</title>
+</head>
+
+<body>
+    <script>
+
+        // 1. 객체 찍어내는 기계를 만드는 옛날 방식 . class로 바뀜
+        // 옛날엔 class가 없어서 prototype을 줘서 객체를 만듬.
+        function choi(name) {
+            this.name = name;
+            this.showName = function () {
+                console.log(this.name)
+            }
+        }
+
+        //인스터스란 무엇인가?
+
+        const 최승지 = new choi('최승지');
+        최승지.showName();
+
+        const 박승지 = new choi('쨈민');
+        박승지.showName();
+
+        choi.prototype.group = '오래된사람'
+
+        console.log(최승지.group);
+        console.log(박승지.group);
+
+    </script>
+</body>
+
+</html>

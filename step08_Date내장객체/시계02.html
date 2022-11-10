@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시계 02 - 아날로그시계</title>
+    <style>
+        .clock {
+            position: absolute;
+            background: #fff;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 15px solid #000;
+        }
+
+        .clock>* {
+            position: absolute;
+            display: block;
+            bottom: 50%;
+            left: 50%;
+            border-radius: 20px;
+        }
+
+        .clock::after {
+            content: "";
+            position: absolute;
+            inset: 50% auto auto 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 5px solid #000;
+            border-radius: 50%;
+
+        }
+
+        .clock strong {
+            width: 17px;
+            height: 120px;
+            background: #000;
+            transform-origin: bottom center;
+        }
+
+        .clock em {
+            width: 13px;
+            height: 170px;
+            background: #000;
+            transform: translateX(-50%) rotate(45deg);
+            transform-origin: bottom center;
+        }
+
+        .clock span {
+            width: 7px;
+            height: 180px;
+            background: rgb(255, 38, 0);
+            transform: translateX(-50%) rotate(45deg);
+            transform-origin: bottom center;
+        }
+
+        .clock .twelve {
+            top: 3%;
+            left: 46%;
+            font-size: 29px;
+            font-weight: 600;
+        }
+
+        .clock .three {
+            right: 0;
+            left: 93%;
+            font-size: 29px;
+            font-weight: 600;
+        }
+
+        .clock .six {
+            bottom: 3%;
+            left: 50%;
+            font-size: 29px;
+            font-weight: 600;
+        }
+
+        .clock .nine {
+            right: 93%;
+            left: 3%;
+            font-size: 29px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="twelve">12</div>
+        <div class="three">3</div>
+        <div class="six">6</div>
+        <div class="nine">9</div>
+        <p></p>
+        <strong></strong>
+        <em></em>
+        <span></span>
+    </div>
+
+    <script>
+        const hourElement = document.querySelector('.clock strong');
+        const minutesElement = document.querySelector('.clock em');
+        const secondsElement = document.querySelector('.clock span');
+
+
+
+        const 날짜함수 = () => {
+            const date = new Date();
+            const week = ['일', '월', '화', '수', '목', '금', '토']
+
+            const year = date.getFullYear();
+            const Month = date.getMonth() + 1;
+            const day = date.getDate();
+            const days = date.getDay();
+            const hour = date.getHours(); //12
+            const minutes = date.getMinutes();
+            const seconds = date.getSeconds();
+
+            hourElement.style.transform = `translateX(-50%) rotate(${hour * (360 / 12)}deg)`
+            minutesElement.style.transform = `translateX(-50%) rotate(${minutes * (360 / 60)}deg)`
+            secondsElement.style.transform = `translateX(-50%) rotate(${seconds * (360 / 60)}deg)`
+        }
+        setInterval(날짜함수, 1000)
+
+    </script>
+</body>
+
+</html>

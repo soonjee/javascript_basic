@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜 01</title>
+</head>
+
+<body>
+    <div class="date"></div>
+    <script>
+        const 날짜 = new Date();
+        const 요일 = ['일', '월', '화', '수', '목', '금', '토']
+
+        const DATE = document.querySelector('.date')
+        DATE.innerHTML += 날짜.toLocaleString() + '<br/>';
+        DATE.innerHTML += 날짜.toLocaleDateString() + '<br/>';
+        DATE.innerHTML += 날짜.getFullYear() + '<br/>';
+        DATE.innerHTML += 날짜.getMonth() + 1 + '<br/>';
+        DATE.innerHTML += 요일[날짜.getDay()] + '요일 <br/>';
+
+        /*
+        DATE.innerHTML = 날짜.toLocaleString();
+        -> 2022. 7. 22. 오전 10:24:11
+        DATE.innerHTML = 날짜.toDateString();
+        -> Fri Jul 22 2022
+        DATE.innerHTML = 날짜.toLocaleDateString();
+        -> 2022. 7. 22.
+        */
+
+        /*
+        DATE.innerHTML += 날짜.toLocaleString() + '<br/>';
+        DATE.innerHTML += 날짜.toLocaleDateString();
+        -> 2022. 7. 22. 오전 10: 26: 43
+           2022. 7. 22.
+        */
+
+        /*
+        DATE.innerHTML += 날짜.getFullYear() + '<br/>';
+        DATE.innerHTML += 날짜.getMonth() + 1 + '<br/>';
+        DATE.innerHTML += 요일[날짜.getDay()] + '요일 <br/>';
+        -> 2022
+           7
+           금요일
+        */
+
+    </script>
+</body>
+
+</html>

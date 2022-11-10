@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시계 01</title>
+</head>
+
+<body>
+    <div class="date"></div>
+    <script>
+        const print = document.querySelector('.date');
+        const 날짜함수 = () => {
+            const date = new Date();
+            const week = ['일', '월', '화', '수', '목', '금', '토']
+
+            const year = date.getFullYear();
+            const Month = date.getMonth() + 1;
+            const day = date.getDate();
+            const days = date.getDay();
+            const hour = date.getHours();
+            const minutes = date.getMinutes();
+            const seconds = date.getSeconds();
+
+            print.innerHTML = `${year}년 ${month}월 ${days}일 ${week[days]}요일 ${hour}시 ${minutes}분 ${seconds} 초`;
+        }
+
+
+
+        setInterval(날짜함수, 1000)
+
+    </script>
+</body>
+
+</html>

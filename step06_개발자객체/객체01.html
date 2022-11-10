@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 01 - 개발자객체만들기</title>
+</head>
+
+<body>
+
+    <div id="App">객체 만들기</div>
+    <div id="This">객체 만들기</div>
+
+
+
+    <script>
+        // 01. 객체 리터럴 표기법을 이용한 객체의 생성
+        const 최주희 = {
+            name: '최주희',
+            age: 24,
+        }
+
+        console.log(최주희.name + `바보`);   //[object Object]바보
+
+
+        // 02. 객체 생성자함수를 이용한 객체의 생성
+        // new Object(); 꼭 대문자소문자 구분될 것
+        const 박주희 = new Object();
+        박주희.name = '박주희';
+        박주희.age = 23;
+
+        console.log(박주희);
+        // 최주희바보
+        // 객체01.html: 31
+        // { name: '박주희', age: 23 }
+        // age: 23
+        // name: "박주희"
+        // [[Prototype]]: Object
+
+
+        //  03. 객체의 메소드 : 객체의 속성(property)과 함수(method)를 가진다.
+        //  property (key : value)
+        const 김주희 = {
+            name: '김주희',
+            하는일: function () {
+                console.log(김주희.name + `맛있는거 먹기`)  // 맛있는거 김주희 먹기
+                //console.log(김주희.name + `맛있는거 먹기`) => 김주희맛있는거 먹기
+            }
+        }
+
+        console.log(김주희['name'], 김주희.name);
+
+        김주희.하는일();
+
+
+        // 04. 객체에서의 this는 객체 자신을 가리킨다.
+        // `${this.name} 과 공부하기...` = this.name + '과 공부하기...'
+        const 우주희 = {
+            name: '우주희',
+            age: 19,
+            하는일: function () {
+                console.log(`${this.name} 과 공부하기...`)
+            }
+        }
+
+        우주희.하는일();
+
+        // 05. 객체의 메소드로 ()=> 화살표 함수를 쓰면 this는 ?
+        const 소주희 = {
+            name: '소주희',
+            age: 19,
+            하는일: () => {
+                console.log(`${소주희.name}과 공부하기...`)
+            }
+        }
+        소주희.하는일();
+
+        // 06. 객체안 일반적인 함수(무명)에서의 this 
+        const choi = {
+            name: 'juhee',
+            job: function () {
+                setInterval(() => {
+                    console.log(this.name + '술 마시기')
+                }, 1000)
+            }
+        }
+
+        choi.job();
+
+
+
+        //etc. 이벤트리스너에서의 this
+        // id는 바로 선택이 가능하지만 권장하는 방법이 아니다. document.qureySelector('#App'), document.getElementById('App')
+
+        App.addEventListener('click', function () {
+            console.log(this) // 이벤트리스너 function에서의 this는 App
+        })
+
+        App.addEventListener('click', () => {
+            console.log(this) // 화살표함수에서의 this는 window;
+        })
+
+        console.log(this) //this는 window;
+
+    </script>
+</body>
+
+</html>
